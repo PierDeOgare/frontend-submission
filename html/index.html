@@ -93,8 +93,40 @@
   </div>
         <!-- center the design structure on larger screen but fills whole screen on phone-->
          <div class="wrapper">
-            
+            <header class="app-header">
+
+      <!-- Top icon row (menu + bell) -->
+      <div class="top-bar">
+        <button class="icon-btn" aria-label="Open menu">
+          <i class="bi bi-list"></i>
+        </button>
+        <button class="icon-btn" aria-label="Notifications">
+          <i class="bi bi-bell"></i>
+        </button>
+      </div>
+
+      <!-- Profile pic of user -->
+      <div class="profile-avatar-wrap">
+        <img
+          src="assets/default-profile.jpeg"
+          alt="Michael's profile photo"
+          class="profile-avatar"
+        />
+      </div>
+
+      <!-- User name -->
+      <h1 class="profile-name">Michael</h1>
+
+      <!-- Welcome message -->
+      <p class="profile-message">
+        You've officially joined<br />
+        your first investment<br />
+        knowledge club!
+      </p>
+
+    </header>
          </div>
+
          <!--Bootstrap script-->
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
          <!--the coded local script-->
