@@ -16,9 +16,84 @@
 
     </head>
     <body>
+        <!-- modal for user sign up which appears when user loads the index page at first-->
+         <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content profile-modal-content">
+
+        <!-- modal header -->
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title" id="profileModalLabel">
+            <i class="bi bi-person-circle me-2"></i> Set Up Your Profile
+          </h5>
+          <!-- Restrict close button so that users must complete the form -->
+        </div>
+
+        <!-- modal body -->
+        <div class="modal-body pt-2">
+          <p class="modal-subtitle">Welcome! Tell us a little about yourself to get started.</p>
+
+          <form id="profileForm" novalidate>
+
+            <!-- Profile picture upload -->
+            <div class="mb-4 text-center">
+
+              <!-- Clickable avatar preview — clicking it triggers the file input -->
+              <div class="modal-avatar-wrap" id="avatarPreviewWrap" title="Click to upload a photo">
+                <img
+                  src="https://ui-avatars.com/api/?name=?&background=2e3328&color=c8a84b&size=128"
+                  alt="Profile picture preview"
+                  class="modal-avatar-preview"
+                  id="avatarPreview"
+                />
+                <!-- Camera icon overlay shown on hover -->
+                <div class="avatar-overlay">
+                  <i class="bi bi-camera-fill"></i>
+                </div>
+              </div>
+
+              <!-- Hidden file input — triggered by clicking the avatar above -->
+              <input
+                type="file"
+                id="profilePicInput"
+                accept="image/*"
+                class="d-none"
+              />
+
+              <p class="upload-hint mt-2">Click photo to upload</p>
+            </div>
+
+            <!-- Name input -->
+            <div class="mb-3">
+              <label for="profileNameInput" class="form-label modal-label">
+                Your Name <span class="text-danger">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control modal-input"
+                id="profileNameInput"
+                placeholder="e.g. Michael"
+                required
+                maxlength="40"
+              />
+              <!-- Shown if user tries to submit with empty name -->
+              <div class="invalid-feedback">Please enter your name to continue.</div>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-gold w-100 mt-2">
+              Let's Go <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
         <!-- center the design structure on larger screen but fills whole screen on phone-->
          <div class="wrapper">
-
+            
          </div>
          <!--Bootstrap script-->
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
