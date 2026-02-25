@@ -100,4 +100,51 @@ document.addEventListener('DOMContentLoaded', function () {
     profileModal.hide();
   });
 
+  //MEMBERSHIP OPTIONS TOGGLE
+  var foundationCard = document.getElementById('foundationCard');
+  var economyCard    = document.getElementById('economyCard');
+
+  // Click listeners for each card
+  foundationCard.addEventListener('click', function () {
+    toggleCard(foundationCard);
+  });
+
+  economyCard.addEventListener('click', function () {
+    toggleCard(economyCard);
+  });
+
+  // Keyboard support — Enter or Space also toggles the card
+  foundationCard.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleCard(foundationCard);
+    }
+  });
+
+  economyCard.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleCard(economyCard);
+    }
+  });
+
+  /**
+   * Toggle a membership card open or closed.
+   * Adding the "open" class makes the CSS show the description
+   * and rotate the chevron icon.
+   *
+   * @param {HTMLElement} card - the membership card element
+   */
+  function toggleCard(card) {
+    var isOpen = card.classList.contains('open');
+
+    if (isOpen) {
+      card.classList.remove('open');
+      card.setAttribute('aria-expanded', 'false');
+    } else {
+      card.classList.add('open');
+      card.setAttribute('aria-expanded', 'true');
+    }
+  }
+
 });
