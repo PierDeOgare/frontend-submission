@@ -12,7 +12,7 @@
         <!--Fonts-->
         <link href="https://fonts.googleapis.com" rel="preconnect"/>
         <link href="https://fonts.googleapis.com/css2? family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-        <link href="css/styles.css" rel="stylesheet"/>
+        <link href="../css/styles.css" rel="stylesheet"/>
 
     </head>
     <body>
@@ -108,7 +108,7 @@
       <!-- Profile pic of user -->
       <div class="profile-avatar-wrap">
         <img
-          src="assets/default-profile.jpeg"
+          src="../assets/default-profile.jpeg"
           alt="Michael's profile photo"
           class="profile-avatar"
         />
@@ -125,11 +125,80 @@
       </p>
 
     </header>
+        <!--CONTENT-->
+        <main class="app-main">
+            <!--Members' info grid which displays the other members details-->
+            <section class="members-section">
+        <div class="row g-3">
+
+          <!-- 1st card -->
+          <div class="col-6">
+            <div class="member-card">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <img
+                  src="../assets/dog.jpeg"
+                  alt="Benard Makodingo"
+                  class="member-avatar"
+                />
+                <span class="member-name">Benard<br />Makodingo</span>
+              </div>
+              <span class="member-count">350</span>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="col-6">
+            <div class="member-card">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <img
+                  src="../assets/rabbit.jpeg"
+                  alt="BigSmall Foot"
+                  class="member-avatar"
+                />
+                <span class="member-name">BigSmall<br />Foot</span>
+              </div>
+              <span class="member-count">225</span>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="col-6">
+            <div class="member-card">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <img
+                  src="../assets/likhalo-pic.jpeg"
+                  alt="Caroline Likhoi"
+                  class="member-avatar"
+                />
+                <span class="member-name">Caroline<br />Likhoi</span>
+              </div>
+              <span class="member-count">117</span>
+            </div>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="col-6">
+            <div class="member-card">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <img
+                  src="../assets/likhalo-pic.jpeg"
+                  alt="Caroline Likhoi"
+                  class="member-avatar"
+                />
+                <span class="member-name">Caroline<br />Likhoi</span>
+              </div>
+              <span class="member-count">321</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+        </main>
          </div>
 
          <!--Bootstrap script-->
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
          <!--the coded local script-->
-         <script src="scripts/script.js"></script>
+         <script src="../scripts/script.js"></script>
     </body>
 </html>
