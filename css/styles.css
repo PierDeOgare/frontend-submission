@@ -1,0 +1,306 @@
+──────────────── */
+.recommend-section {
+  background: var(--recommend-bg);
+  margin: 16px;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.recommend-heading {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+/* The italic-style highlighted line */
+.recommend-highlight {
+  font-size: 0.75rem;
+  color: #3a3000;
+  font-style: italic;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.recommend-body {
+  font-size: 0.78rem;
+  color: #2a2000;
+  line-height: 1.55;
+}
+
+
+/* ─────────────────────────────────────────────────────
+   MEMBERSHIP CARDS (accordion)
+   Dark olive cards with collapsible descriptions.
+   Clicking toggles the body open/closed.
+───────────────────────────────────────────────────── */
+.memberships-section {
+  padding: 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.membership-card {
+  background: #2e3328;          /* dark olive tone matching the screenshot */
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: background 0.2s ease;
+}
+
+.membership-card:hover {
+  background: #353c2e;
+}
+
+/* The always-visible header row: title + chevron */
+.membership-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+}
+
+.membership-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+/* Chevron icon — rotates 180° when card is open */
+.membership-chevron {
+  color: var(--gold);
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* When a card has the "open" class, rotate the chevron */
+.membership-card.open .membership-chevron {
+  transform: rotate(180deg);
+}
+
+/* The collapsible description body */
+.membership-body {
+  display: none;              /* hidden by default */
+  padding: 0 16px 14px;
+  animation: slideDown 0.25s ease;
+}
+
+/* Show the body when card has "open" class */
+.membership-card.open .membership-body {
+  display: block;
+}
+
+.membership-body p {
+  color: var(--light-gray);
+  font-size: 0.78rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Smooth slide-down animation for the description */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────
+   BOTTOM BANNER
+   Gold text strip linking to more membership details.
+───────────────────────────────────────────────────── */
+.bottom-banner {
+  background: var(--gold);
+  margin: 0 16px 16px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bottom-banner:hover {
+  background: var(--gold-light);
+}
+
+.bottom-banner p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1a1400;
+  margin: 0;
+}
+
+
+/* ─────────────────────────────────────────────────────
+   BOTTOM NAVIGATION BAR
+───────────────────────────────────────────────────── */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #131613;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 10px 0;
+  flex-shrink: 0;             /* don't let it shrink when content is long */
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  color: var(--gold);
+}
+
+/* The centre "+" button is slightly larger and gold */
+.nav-btn-add {
+  color: var(--gold);
+  font-size: 1.6rem;
+}
+
+
+/*
+   MODAL
+
+*/
+
+/* The modal card itself */
+.profile-modal-content {
+  background: #1e2320;                    /* dark, matches app header */
+  border: 1px solid rgba(200,168,75,0.25);
+  border-radius: 18px;
+  color: var(--white);
+}
+
+/* Modal title */
+.modal-title {
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Small subtitle under the title */
+.modal-subtitle {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Avatar preview area ── */
+/* The circular avatar container — clickable */
+.modal-avatar-wrap {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  cursor: pointer;
+  /* Gold ring around the avatar */
+  padding: 3px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+}
+
+/* The actual preview image inside the ring */
+.modal-avatar-preview {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid #1e2320;            /* gap between image and gold ring */
+}
+
+/* Dark overlay with camera icon — shown on hover */
+.avatar-overlay {
+  position: absolute;
+  inset: 3px;                            /* sits inside the gold ring */
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1.3rem;
+  opacity: 0;                            /* hidden by default */
+  transition: opacity 0.2s ease;
+}
+
+/* Show the overlay when hovering over the avatar wrap */
+.modal-avatar-wrap:hover .avatar-overlay {
+  opacity: 1;
+}
+
+/* Small hint text below the avatar */
+.upload-hint {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+/* ── Name input ── */
+.modal-label {
+  color: var(--light-gray);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.modal-input {
+  background: #2a2f2a !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  color: var(--white) !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  font-size: 0.9rem !important;
+  transition: border-color 0.2s !important;
+}
+
+.modal-input:focus {
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(200,168,75,0.15) !important;
+  outline: none;
+}
+
+.modal-input::placeholder {
+  color: #555 !important;
+}
+
+/* ── Submit button ── */
+.btn-gold {
+  background: var(--gold);
+  color: #1a1400;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  padding: 11px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+  color: #1a1400;
+  transform: translateY(-1px);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
