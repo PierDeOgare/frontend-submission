@@ -1,6 +1,6 @@
 //ensure the html file loads completely to start any javascript functions or features
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     //MODAL SETUP SCRIPT
     //A)get modal elements references
     var profileModalEl   = document.getElementById('profileModal');
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ── Update the header avatar ──
     // If the modal preview was changed (i.e. user uploaded a photo) copy that image src across to the main header avatar.
-    var defaultAvatarSrc = 'assets/default-profile.jpeg';  // placeholder base source pic
+    var defaultAvatarSrc = 'https://ui-avatars.com/api/';  // placeholder base source pic
 
     if (!avatarPreview.src.includes(defaultAvatarSrc)) {
       // if user uploaded a custom photo use it in the header
